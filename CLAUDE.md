@@ -65,6 +65,38 @@ rupert/
 - **Before Committing**: Run tests
 - **After Committing**: Push changes and create a PR
 
+## Common Commands
+
+### Running the Application
+```bash
+# Run the main application
+poetry run python -m rupert.main
+
+# Run specific modules
+poetry run python -m rupert.hello_world
+```
+
+### Testing
+```bash
+# Run all tests
+poetry run pytest
+
+# Run tests with verbose output
+poetry run pytest -v
+
+# Run specific test file
+poetry run pytest tests/test_hello_world.py
+
+# Run tests with coverage
+poetry run pytest --cov=rupert --cov-report=html
+```
+
+### Code Quality
+```bash
+# Run quality checks (code formatting, imports sorting, type checking)
+poetry run black src tests && poetry run isort src tests && poetry run mypy src
+```
+
 ## Documentation
 - Keep this CLAUDE.md updated as the project evolves
 - Document new features, integrations and their capabilities
