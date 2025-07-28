@@ -1,0 +1,72 @@
+### Rupert AI Assistant API Requests
+### Run the server first: poetry run python -m rupert.main
+
+### Health Check
+GET http://localhost:8000/health
+Accept: application/json
+
+###
+
+### Root endpoint (redirects to docs)
+GET http://localhost:8000/
+Accept: application/json
+
+###
+
+### Chat with Rupert - Basic greeting
+POST http://localhost:8000/chat
+Content-Type: application/json
+
+{
+  "message": "Hello Rupert"
+}
+
+###
+
+### Chat with Rupert - Ask about yourself
+POST http://localhost:8000/chat
+Content-Type: application/json
+
+{
+  "message": "Tell me about yourself"
+}
+
+###
+
+### Chat with Rupert - Ask about purpose
+POST http://localhost:8000/chat
+Content-Type: application/json
+
+{
+  "message": "What's your purpose?"
+}
+
+###
+
+### Chat with Rupert - General question
+POST http://localhost:8000/chat
+Content-Type: application/json
+
+{
+  "message": "What can you help me with?"
+}
+
+###
+
+### Chat with Rupert - Invalid request (missing message)
+POST http://localhost:8000/chat
+Content-Type: application/json
+
+{}
+
+###
+
+### Chat with Rupert - Empty message
+POST http://localhost:8000/chat
+Content-Type: application/json
+
+{
+  "message": ""
+}
+
+###

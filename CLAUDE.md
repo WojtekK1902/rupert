@@ -69,11 +69,27 @@ rupert/
 
 ### Running the Application
 ```bash
-# Run the main application
+# Run the API server (default port 8000)
 poetry run python -m rupert.main
 
-# Run specific modules
-poetry run python -m rupert.hello_world
+# Or run with uvicorn directly
+poetry run uvicorn rupert.api:app --reload --host 0.0.0.0 --port 8000
+
+# Access the API
+# - API Documentation: http://localhost:8000/docs
+# - Health Check: http://localhost:8000/health
+# - Chat Endpoint: POST http://localhost:8000/chat
+```
+
+### API Usage Examples
+```bash
+# Health check
+curl http://localhost:8000/health
+
+# Chat with Rupert
+curl -X POST http://localhost:8000/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message": "Hello Rupert"}'
 ```
 
 ### Testing
