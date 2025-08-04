@@ -5,14 +5,14 @@ from typing import Optional
 
 class HelloWorld:
     """Simple Hello World class for Rupert."""
-    
+
     def greet(self, name: Optional[str] = None) -> str:
         """
         Return a greeting message.
-        
+
         Args:
             name: Optional name to personalize the greeting.
-            
+
         Returns:
             A greeting string.
         """
